@@ -29,6 +29,14 @@ extra hint:
 ***mutex*** is late introduced and could be the complicatest lock in Linux. It will use lock() and unlock() to perform blocking.
 ***mutex*** has lock own and the lock should be unlock by the same owner.
 
+extra hint:
+***reader writer lock*** rules (reader priority): allow multiple reader at a time / when no reader, one writer at a time
+***reader writer lock*** implement rules (reader priority): first reader then lock / last reader leave then unlock / writer then lock
+
+extra hint:
+***seqlock*** rules (writer priority): one writer at a time / allow multiple reader at a time
+***seqlock*** implement rules (writer priority): writer then lock (and block reader) / allow multiple readers keep try read  
+
 # Possible Issues
 - Deadlock: two or more threads are using the same two or more resource, and will meet deadlock when neither of thread can get sufficient resources to work (and no thread releases the resouces).
 ```
@@ -93,4 +101,8 @@ https://blog.louie.lu/2016/10/22/mutex-semaphore-the-difference-and-linux-kernel
 
 https://hackmd.io/@RinHizakura/rJhEpdyNw
 
+linux
 https://www.cntofu.com/book/46/linux_device_driver_programming/tong_bu_yu_suo_ding.md#google_vignette
+
+seqlock
+http://www.wowotech.net/kernel_synchronization/seqlock.html
