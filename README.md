@@ -92,6 +92,8 @@ Pthread have implemented conditional variables, but Linux kernel doesn't have.
 - User mode VS Kernel mode: CPU will check which mode the section in the program belong, and decide whether the section have sufficient authencation to execute (the hardware).
 - User space VS Kernel space: the memory or code section that can be operated in User mode or Kernel mode.
 
+- System Calls used in user program are performed in Kernel mode !
+
 # Reference
 The following are some materials for deep understanding of synchronization in (linuux) kernel
 
